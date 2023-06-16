@@ -8,13 +8,11 @@
  */
 int main(void)
 {
-	char *str = "abcdefghijklmnopqrsuvwzyz";
-	int i;
-	int len = (int)strlen(str);
+	char str;
 
-	for (i = 0; i < len; i++)
+	for (str = 'a'; str <= 'z'; str++)
 	{
-		putchar(str[i]);
+		putchar(str);
 	}
 	putchar('\n');
 	return (0);

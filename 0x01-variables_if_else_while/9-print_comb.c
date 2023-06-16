@@ -10,12 +10,8 @@ int main(void)
 
 	for (i = 0; i <= 9; i++)
 	{
-		putchar(i + 'a');
-		putchar(',' + (' ' << 8));
-		if (i == 9)
-		{
-			putchar('$');
-		}
+		putchar(i + '0');
+		putchar(' ');
 	}
 	putchar('\n');
 	return (0);
