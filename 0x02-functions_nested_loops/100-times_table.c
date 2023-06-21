@@ -1,14 +1,18 @@
 #include "main.h"
 
 /**
-  * print_times_table - Prints the 9 times table, starting with 0
+  * print_times_table - Prints the n times table, starting with 0
   * @n: number of times to print
-  * Return: empty output
+  * Return: void
   */
 void print_times_table(int n)
 {
 	int a, b, c, u, d;
-
+	
+	if (n < 0|| n > 15)
+	{
+		return;
+	}
 	for (a = 0; a <= n; a++)
 	{
 		for (b = 0; b <= n; b++)
