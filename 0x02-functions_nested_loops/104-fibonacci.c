@@ -1,31 +1,39 @@
 #include <stdio.h>
-
 /**
-  * main - Prints the first 98 fibonacci numbers
+  * fibonacci_sequence - Prints the 98 times
   *
-  * Return: Nothing!
+  * Return: empty output
+  */
+void fibonacci_sequence(void)
+{
+	int n = 98;
+	int a = 1;
+	int b = 2;
+	int i;
+
+	printf("%d, %d, ", a, b);
+	for (i = 2; i < n; i++)
+	{
+		int next_number = a + b;
+
+		printf("%d", next_number);
+		if (i < n - 1)
+		{
+			printf(", ");
+		}
+
+		a = b;
+		b = next_number;
+	}
+	printf("\n");
+}
+/**
+  * main - Entry point
+  *
+  * Return: 0
   */
 int main(void)
 {
-	int i = 0;
-	long j = 1, k = 2;
-
-	while (i <= 98)
-	{
-		if (i == 0)
-			printf("%ld", j);
-		else if (i == 1)
-			printf(", %ld", k);
-		else
-		{
-			k += j;
-			j = k - j;
-			printf(", %ld", k);
-		}
-
-		++i;
-	}
-
-	printf("\n");
+	fibonacci_sequence();
 	return (0);
 }
