@@ -1,4 +1,4 @@
-#include "main.c"
+#include "main.h"
 /**
 * postive_or_negative - check if + or -
 * Return: int
