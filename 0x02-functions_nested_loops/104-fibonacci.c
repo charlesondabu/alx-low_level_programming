@@ -16,7 +16,7 @@ void fibonacci_sequence(void)
 	{
 		int next_number = a + b;
 
-		printf("%d", next_number);
+		printf("%ld", next_number);
 		if (i < n - 1)
 		{
 			printf(", ");
