@@ -1,39 +1,38 @@
 #include <stdio.h>
+#define LARGEST 10000000000
 /**
-  * fibonacci_sequence - Prints the 98 times
-  *
-  * Return: empty output
-  */
-void fibonacci_sequence(void)
-{
-	int n = 98;
-	int a = 1;
-	int b = 2;
-	int i;
-
-	printf("%d, %d, ", a, b);
-	for (i = 2; i < n; i++)
-	{
-		int next_number = a + b;
-
-		printf("%ld", next_number);
-		if (i < n - 1)
-		{
-			printf(", ");
-		}
-
-		a = b;
-		b = next_number;
-	}
-	printf("\n");
-}
-/**
-  * main - Entry point
-  *
-  * Return: 0
-  */
+ * main - main block
+ * Description: Find and print the first 98 fib numbers starting with 1 and 2.
+ * Numbers should be coma and space separated.
+ * Return: 0
+ */
 int main(void)
 {
-	fibonacci_sequence();
+	unsigned long int fr1 = 0, bk1 = 1, fr2 = 0, bk2 = 2;
+	unsigned long int hold1, hold2, hold3;
+	int count;
+
+	printf("%lu, %lu, ", bk1, bk2);
+	for (count = 2; count < 98; count++)
+	{
+		if (bk1 + bk2 > LARGEST || fr2 > 0 || fr1 > 0)
+		{
+			hold1 = (bk1 + bk2) / LARGEST;
+			hold2 = (bk1 + bk2) % LARGEST;
+			hold3 = fr1 + fr2 + hold1;
+			fr1 = fr2, fr2 = hold3;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu%010lu", fr2, bk2);
+		}
+		else
+		{
+			hold2 = bk1 + bk2;
+			bk1 = bk2, bk2 = hold2;
+			printf("%lu", bk2);
+		}
+		if (count != 97)
+			printf(", ");
+	}
+	printf("\n");
 	return (0);
 }
