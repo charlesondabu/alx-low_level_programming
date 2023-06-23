@@ -12,12 +12,15 @@ void print_square(int s)
 	{
 		_putchar('\n');
 	}
-	for (a = 0; a <= s; a++)
+	else
 	{
-		for (b = 0; b <= s; b++)
+		for (a = 0; a < s; a++)
 		{
-			_putchar(35);
+			for (b = 0; b < s; b++)
+			{
+				_putchar(35);
+			}
+			_putchar('\n');
 		}
-		_putchar('\n');
 	}
 }
